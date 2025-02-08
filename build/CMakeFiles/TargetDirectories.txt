@@ -1,3 +1,0 @@
-/hdd/Projects/Walrus/build/CMakeFiles/Walrus.dir
-/hdd/Projects/Walrus/build/CMakeFiles/edit_cache.dir
-/hdd/Projects/Walrus/build/CMakeFiles/rebuild_cache.dir
