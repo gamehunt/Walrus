@@ -16,6 +16,8 @@ add_executable(${PROJECT_NAME}
     src/cparse/shunting-yard.cpp
     src/main.cpp
     src/dice.cpp
+    src/list.cpp
+    src/initiative.cpp
     src/roll_engine.cpp
 )
 target_include_directories(${PROJECT_NAME} PRIVATE include ${DPP_INCLUDE_DIR})

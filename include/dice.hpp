@@ -9,7 +9,7 @@ public:
     dice(): rollable() {;}
 
     virtual void deserialize(const std::string&) override;
-    virtual std::string serialize(const unsigned int& result) const override;
+    virtual std::string serialize() const override;
 
     int getSides();
 

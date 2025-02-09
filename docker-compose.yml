@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bot:
+    build: .
+    container_name: "walrus-bot"
+    restart: always
+    # networks:
+    #   - host_env
+
+# networks:
+#   host_env:
+#     external: true

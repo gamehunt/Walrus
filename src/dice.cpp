@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <dice.hpp>
 #include <functional>
-#include <utility>
+#include <stdexcept>
 
 void dice::deserialize(const std::string& expr) {
     rollable::deserialize(expr);
@@ -10,15 +10,21 @@ void dice::deserialize(const std::string& expr) {
     } else {
         amount = 1;
     }
+    if(amount <= 0) {
+        throw std::invalid_argument("amount <= 0");
+    }
     auto start = expr.begin();
     while(*start != 'd') {
         start++;
     }
     sides = std::stoi(expr.substr(start - expr.begin() + 1)); 
+    if(sides <= 1) {
+        throw std::invalid_argument("sides <= 1");
+    }
 }
 
-std::string dice::serialize(const unsigned int& result) const {
-    return std::to_string(result);
+std::string dice::serialize() const {
+    return std::to_string(result());
 }
 
 int dice::getSides() {

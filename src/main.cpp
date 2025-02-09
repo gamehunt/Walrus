@@ -59,10 +59,12 @@ int main(int argc, const char** argv) {
         if(event.msg.author.is_bot()) {
             return;
         }
-        roll_engine::result res = roll_engine::eval(event.msg.content);
-        if(res.valid) {
-            event.reply(res.value);
-        }
+        try {
+            roll_engine::result res = roll_engine::eval(event.msg.content);
+            if(res.valid) {
+                event.reply(res.value);
+            }
+        } catch(std::exception& e) {;}
     });
  
     bot.on_ready([&bot, &program](const dpp::ready_t& event) {
